@@ -113,5 +113,61 @@ namespace Scanner1
             if (state == 8) Console.WriteLine("Matched\tChji");
             else Console.WriteLine("Not Matched");
         }
+
+        //Seriestl
+        public void stringType(string Lexeme)
+        {
+            int state = 1, i = 0;
+            char c;
+            while (state != 16 && state != 0)
+            {
+                c = Lexeme[i];
+                switch (state)
+                {
+                    case 1:
+                        if (c == 'S') state = 2;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 2:
+                        if (c == 'e') state = 4;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 4:
+                        if (c == 'r') state = 6;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 6:
+                        if (c == 'i') state = 8;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 8:
+                        if (c == 'e') state = 10;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 10:
+                        if (c == 's') state = 12;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 12:
+                        if (c == 't') state = 14;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 14:
+                        if (c == 'l') state = 16;
+                        else state = 0;
+                        i++;
+                        break;
+                }
+            }
+            if (state == 16) Console.WriteLine("Matched\tSeriestl");
+            else Console.WriteLine("Not Matched");
+        }
     }
 }
