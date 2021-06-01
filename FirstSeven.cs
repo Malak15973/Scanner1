@@ -169,5 +169,41 @@ namespace Scanner1
             if (state == 16) Console.WriteLine("Matched\tSeriestl");
             else Console.WriteLine("Not Matched");
         }
+
+        //IMwf
+        public void floatTypeMatch(string Lexeme)
+        {
+            int state = 1, i = 0;
+            char character;
+            while (state != 8 && state != 0)
+            {
+                character = Lexeme[i];
+                switch (state)
+                {
+                    case 1:
+                        if (character == 'I') state = 2;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 2:
+                        if (character == 'M') state = 4;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 4:
+                        if (character == 'w') state = 6;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 6:
+                        if (character == 'f') state = 8;
+                        else state = 0;
+                        i++;
+                        break;
+                }
+            }
+            if (state == 8) Console.WriteLine("Matched\tIMwf");
+            else Console.WriteLine("Not Matched");
+        }
     }
 }
