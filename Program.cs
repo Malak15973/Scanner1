@@ -19,5 +19,171 @@ namespace Scanner1
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        public static void StartComment(string input)
+        {
+            int state = 1, i = 0;
+            char c;
+            while (state != 4 && state != 0)//0 For Error
+            {
+                c = input[i];
+                switch (state)
+                {
+                    case 1:
+                        if (c == '@') state = 2;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 2:
+                        if (c == '/') state = 4;
+                        else state = 0;
+                        i++;
+                        break;
+                }
+
+            }
+            if (state == 4) Console.WriteLine("Matched");
+            else Console.WriteLine("Not Matched");
+        }
+        public static void SingleCodeComment(string input)
+        {
+            int state = 1, i = 0;
+            char c;
+            while (state != 4 && state != 0)//0 For Error
+            {
+                c = input[i];
+                switch (state)
+                {
+                    case 1:
+                        if (c == '/') state = 2;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 2:
+                        if (c == '^') state = 4;
+                        else state = 0;
+                        i++;
+                        break;
+                }
+
+            }
+            if (state == 4) Console.WriteLine("Matched");
+            else Console.WriteLine("Not Matched");
+        }
+        public static void TokenDelimiter(string input)
+        {
+            int state = 1, i = 0;
+            char c;
+            while (state != 2 && state != 0) //0 For Error
+            {
+                c = input[i];
+                switch (state)
+                {
+                    case 1:
+                        if (c == '$') state = 2;
+                        else state = 0;
+                        i++;
+                        break;
+                }
+
+            }
+            if (state == 2) Console.WriteLine("Matched");
+            else Console.WriteLine("Not Matched");
+        }
+        public static void LineDelimiter(string input)
+        {
+            int state = 1, i = 0;
+            char c;
+            while (state != 2 && state != 0) //0 For Error
+            {
+                c = input[i];
+                switch (state)
+                {
+                    case 1:
+                        if (c == '.') state = 2;
+                        else state = 0;
+                        i++;
+                        break;
+                }
+
+            }
+            if (state == 2) Console.WriteLine("Matched");
+            else Console.WriteLine("Not Matched");
+        }
+        public static void StartProgram(string input)
+        {
+            int state = 1, i = 0;
+            char c;
+            while (state != 10 && state != 0)//0 For Error
+            {
+                c = input[i];
+                switch (state)
+                {
+                    case 1:
+                        if (c == 'S') state = 2;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 2:
+                        if (c == 't') state = 4;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 4:
+                        if (c == 'a') state = 6;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 6:
+                        if (c == 'r') state = 8;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 8:
+                        if (c == 't') state = 10;
+                        else state = 0;
+                        i++;
+                        break;
+                }
+
+            }
+            if (state == 10) Console.WriteLine("Matched");
+            else Console.WriteLine("Not Matched");
+        }
+        public static void EndProgram(string input)
+        {
+            int state = 1, i = 0;
+            char c;
+            while (state != 8 && state != 0)//0 For Error
+            {
+                c = input[i];
+                switch (state)
+                {
+                    case 1:
+                        if (c == 'L') state = 2;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 2:
+                        if (c == 'a') state = 4;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 4:
+                        if (c == 's') state = 6;
+                        else state = 0;
+                        i++;
+                        break;
+                    case 6:
+                        if (c == 't') state = 8;
+                        else state = 0;
+                        i++;
+                        break;
+                }
+
+            }
+            if (state == 8) Console.WriteLine("Matched");
+            else Console.WriteLine("Not Matched");
+        }
+
     }
 }
