@@ -44,7 +44,6 @@ namespace Scanner1
                 }
             }
             if (state == 10) Console.WriteLine("Matched\tYesif");
-            else Console.WriteLine("Not Matched");
         }
 
         //Otherwise
@@ -105,7 +104,6 @@ namespace Scanner1
                 }
             }
             if (state == 18) Console.WriteLine("Matched\tOtherwise");
-            else Console.WriteLine("Not Matched");
         }
 
         //Omw
@@ -136,7 +134,6 @@ namespace Scanner1
                 }
             }
             if (state == 6) Console.WriteLine("Matched\tOmw");
-            else Console.WriteLine("Not Matched");
         }
 
         //SIMww
@@ -177,7 +174,6 @@ namespace Scanner1
                 }
             }
             if (state == 10) Console.WriteLine("Matched\tSIMww");
-            else Console.WriteLine("Not Matched");
         }
 
         //Chji
@@ -213,7 +209,6 @@ namespace Scanner1
                 }
             }
             if (state == 8) Console.WriteLine("Matched\tChji");
-            else Console.WriteLine("Not Matched");
         }
 
         //Seriestl
@@ -269,7 +264,6 @@ namespace Scanner1
                 }
             }
             if (state == 16) Console.WriteLine("Matched\tSeriestl");
-            else Console.WriteLine("Not Matched");
         }
 
         //IMwf
@@ -305,7 +299,6 @@ namespace Scanner1
                 }
             }
             if (state == 8) Console.WriteLine("Matched\tIMwf");
-            else Console.WriteLine("Not Matched");
         }
 
         //SIMwf
@@ -346,7 +339,6 @@ namespace Scanner1
                 }
             }
             if (state == 10) Console.WriteLine("Matched\tSIMwf");
-            else Console.WriteLine("Not Matched");
         }
     }
 }
