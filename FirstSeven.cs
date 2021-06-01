@@ -7,7 +7,7 @@ namespace Scanner1
     public class FirstSeven : IRepositorySecondSevenDFA
     {
         //Omw
-        public void integerTypeMatch(string Lexeme)
+        public void matchIntegerType(string Lexeme)
         {
             int state = 1, i = 0;
             char character;
@@ -38,7 +38,7 @@ namespace Scanner1
         }
 
         //SIMww
-        public void signedIntegerTypeMatch(string Lexeme)
+        public void matchSignedIntegerType(string Lexeme)
         {
             int state = 1, i = 0;
             char character;
@@ -79,7 +79,7 @@ namespace Scanner1
         }
 
         //Chji
-        public void characterTypeMatch(string Lexeme)
+        public void matchCharacterType(string Lexeme)
         {
             int state = 1, i = 0;
             char character;
@@ -115,7 +115,7 @@ namespace Scanner1
         }
 
         //Seriestl
-        public void stringTypeMatch(string Lexeme)
+        public void matchStringType(string Lexeme)
         {
             int state = 1, i = 0;
             char c;
@@ -171,7 +171,7 @@ namespace Scanner1
         }
 
         //IMwf
-        public void floatTypeMatch(string Lexeme)
+        public void matchFloatType(string Lexeme)
         {
             int state = 1, i = 0;
             char character;
@@ -207,7 +207,7 @@ namespace Scanner1
         }
         
         //SIMwf
-        public void signedFloatTypeMatch(string Lexeme)
+        public void matchSignedFloatType(string Lexeme)
         {
             int state = 1, i = 0;
             char character;
