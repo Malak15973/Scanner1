@@ -21,7 +21,7 @@ namespace Scanner1
         }
         public static void StartComment()
         {
-            string lexeme = code[index] + code[index + 1];
+            string lexeme = code[index..index + 2];
             int state = 1, i = 0;
             char c;
             while (state != 4 && state != 0)//0 For Error
@@ -47,7 +47,7 @@ namespace Scanner1
         }
         public static void SingleCodeComment()
         {
-            string lexeme = code[index] + code[index + 1];
+            string lexeme =  code[index..index + 2];
 
             int state = 1, i = 0;
             char c;
@@ -117,7 +117,7 @@ namespace Scanner1
         }
         public static void StartProgram()
         {
-            string lexeme = code[index]+ code[index+1]+ code[index+2]+ code[index+3]+ code[index+4];
+            string lexeme = code[index..index + 5];
 
             int state = 1, i = 0;
             char c;
@@ -159,7 +159,7 @@ namespace Scanner1
         }
         public static void EndProgram()
         {
-            string lexeme = code[index] + code[index + 1] + code[index + 2] + code[index + 3];
+            string lexeme = code[index..index + 4]; ;
             int state = 1, i = 0;
             char c;
             while (state != 8 && state != 0)//0 For Error
