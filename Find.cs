@@ -16,12 +16,12 @@ namespace Scanner1
         {
             index++; // to skip the $
             String identifier = "";
-            while (!isSpecialChar())
+            while (code[index] == '_' || !isSpecialChar())
             {
-                index++;
                 identifier += code[index];
+                index++;
             }
-            
+
             if (identifier == "")  // If nothing is valid after the $
             {
                 lexemeNumber++;
@@ -36,14 +36,15 @@ namespace Scanner1
                 FindIdentifiers(); // Recursion
         }
 
-        public void FindDigits(){
+        public void FindDigits()
+        {
             index++;
-            String number="";
+            String number = "";
 
             // while (!isSpecialChar() && isDigit())         isDigit function needs to be merged
             while (!isSpecialChar())
             {
-                number+=code[index];
+                number += code[index];
                 index++;
             }
 
