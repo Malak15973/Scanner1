@@ -36,5 +36,19 @@ namespace Scanner1
                 FindIdentifiers(); // Recursion
         }
 
+        public void FindDigits(){
+            index++;
+            String number="";
+
+            // while (!isSpecialChar() && isDigit())         isDigit function needs to be merged
+            while (!isSpecialChar())
+            {
+                number+=code[index];
+                index++;
+            }
+
+            lexemeNumber++;
+            Console.WriteLine(lineNumber + "\t" + number + "\tConst\t" + lexemeNumber + "\tmatched");
+        }
     }
 }
