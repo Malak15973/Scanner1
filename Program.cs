@@ -19,13 +19,14 @@ namespace Scanner1
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-        public static void StartComment(string input)
+        public static void StartComment()
         {
+            string lexeme = code[index] + code[index + 1];
             int state = 1, i = 0;
             char c;
             while (state != 4 && state != 0)//0 For Error
             {
-                c = input[i];
+                c = lexeme[i];
                 switch (state)
                 {
                     case 1:
@@ -44,13 +45,15 @@ namespace Scanner1
             if (state == 4) Console.WriteLine("Matched");
             else Console.WriteLine("Not Matched");
         }
-        public static void SingleCodeComment(string input)
+        public static void SingleCodeComment()
         {
+            string lexeme = code[index] + code[index + 1];
+
             int state = 1, i = 0;
             char c;
             while (state != 4 && state != 0)//0 For Error
             {
-                c = input[i];
+                c = lexeme[i];
                 switch (state)
                 {
                     case 1:
@@ -69,13 +72,14 @@ namespace Scanner1
             if (state == 4) Console.WriteLine("Matched");
             else Console.WriteLine("Not Matched");
         }
-        public static void TokenDelimiter(string input)
+        public static void TokenDelimiter()
         {
+            string lexeme = code[index] ; 
             int state = 1, i = 0;
             char c;
             while (state != 2 && state != 0) //0 For Error
             {
-                c = input[i];
+                c = lexeme[i];
                 switch (state)
                 {
                     case 1:
@@ -89,13 +93,15 @@ namespace Scanner1
             if (state == 2) Console.WriteLine("Matched");
             else Console.WriteLine("Not Matched");
         }
-        public static void LineDelimiter(string input)
+        public static void LineDelimiter()
         {
+            string lexeme = code[index] ;
+
             int state = 1, i = 0;
             char c;
             while (state != 2 && state != 0) //0 For Error
             {
-                c = input[i];
+                c = lexeme[i];
                 switch (state)
                 {
                     case 1:
@@ -109,13 +115,15 @@ namespace Scanner1
             if (state == 2) Console.WriteLine("Matched");
             else Console.WriteLine("Not Matched");
         }
-        public static void StartProgram(string input)
+        public static void StartProgram()
         {
+            string lexeme = code[index]+ code[index+1]+ code[index+2]+ code[index+3]+ code[index+4];
+
             int state = 1, i = 0;
             char c;
             while (state != 10 && state != 0)//0 For Error
             {
-                c = input[i];
+                c = lexeme[i];
                 switch (state)
                 {
                     case 1:
@@ -149,13 +157,14 @@ namespace Scanner1
             if (state == 10) Console.WriteLine("Matched");
             else Console.WriteLine("Not Matched");
         }
-        public static void EndProgram(string input)
+        public static void EndProgram()
         {
+            string lexeme = code[index] + code[index + 1] + code[index + 2] + code[index + 3];
             int state = 1, i = 0;
             char c;
             while (state != 8 && state != 0)//0 For Error
             {
-                c = input[i];
+                c = lexeme[i];
                 switch (state)
                 {
                     case 1:
@@ -183,7 +192,7 @@ namespace Scanner1
             }
             if (state == 8) Console.WriteLine("Matched");
             else Console.WriteLine("Not Matched");
-        }
+        } 
 
     }
 }
