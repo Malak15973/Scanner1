@@ -1,0 +1,13 @@
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\bin\Debug\netcoreapp3.1\full_stack.exe
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\bin\Debug\netcoreapp3.1\full_stack.deps.json
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\bin\Debug\netcoreapp3.1\full_stack.runtimeconfig.json
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\bin\Debug\netcoreapp3.1\full_stack.runtimeconfig.dev.json
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\bin\Debug\netcoreapp3.1\full_stack.dll
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\bin\Debug\netcoreapp3.1\full_stack.pdb
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\obj\Debug\netcoreapp3.1\full_stack.csprojAssemblyReference.cache
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\obj\Debug\netcoreapp3.1\full_stack.AssemblyInfoInputs.cache
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\obj\Debug\netcoreapp3.1\full_stack.AssemblyInfo.cs
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\obj\Debug\netcoreapp3.1\full_stack.csproj.CoreCompileInputs.cache
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\obj\Debug\netcoreapp3.1\full_stack.dll
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\obj\Debug\netcoreapp3.1\full_stack.pdb
+D:\FCAI-H\Year Three\Second Semester\Compilers\Project\CompilerStack\full_stack\obj\Debug\netcoreapp3.1\full_stack.genruntimeconfig.cache
