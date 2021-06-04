@@ -11,7 +11,6 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Collections.Specialized;
 using System.Collections;
-//using static Syncfusion.Windows.Form1.Tools;
 using Microsoft.CSharp;
 using System.CodeDom.Compiler;
 using System.Diagnostics;
@@ -33,40 +32,16 @@ namespace Scanner1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox2.Clear();
-            string Version = "v3.0";
-            string Name = "test.exe";
-            CSharpCodeProvider csc = new CSharpCodeProvider(new Dictionary<string, string>() { { "compilerVerion", Version } });
-            CompilerParameters parameter = new CompilerParameters(new[] { "mscorlib.dll", "System.Core.dll" }, Name, true);
-            parameter.GenerateExecutable = true;
-            //CompilerResults results = csc.CompileAssemblyFromSource(parameter, textBox2.Text);
-            CompilerResults results = csc.CompileAssemblyFromSource(parameter, textBox2.Text); 
-            if (results.Errors.HasErrors)
-            {
-                results.Errors.Cast<CompilerError>().ToList().ForEach(error => textBox1.Text += error.ErrorText + "\r\n");
-            }
-            else
-            {
-                textBox1.Text = "------Build Succeeded------" ;
-                Process.Start(Application.StartupPath + "/" + "test.exe");
-            }
+            richTextBox1.Clear();
+            GetTokens getTokens = new GetTokens(textBox2.Text);
+            richTextBox1.Text = getTokens.Compile();
         }
         
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            checkautocomplete();
         }
-
-        private void checkautocomplete()
-        {
-            string[] KeyWords = new String[] { "Yesif", "Otherwise", "Omw", "SIMww" , "Chji" , "Seriestl", "IMwf", "SIMwf" , "NOReturn" , "RepeatWhen" ,
-                    "Reiterate" , "GetBack" , "OutLoop" , "Loli" , "Include" , "Start" , "Last" };
-            textBox2.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            textBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            textBox2.AutoCompleteCustomSource.AddRange(KeyWords); 
-            Controls.Add(textBox2);
-        }
+ 
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -126,16 +101,22 @@ namespace Scanner1
 
         private void openToolStripButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openfile = new OpenFileDialog();
-            openfile.Title = "My open file dialog";
-            if (openfile.ShowDialog() == DialogResult.OK)
+            try
             {
-                textBox2.Clear();
-                using (StreamReader sr = new StreamReader(openfile.FileName))
+                OpenFileDialog openfile = new OpenFileDialog();
+                openfile.Title = "My open file dialog";
+                if (openfile.ShowDialog() == DialogResult.OK)
                 {
-                    textBox2.Text = sr.ReadToEnd();
-                    sr.Close();
+                    textBox2.Clear();
+                    using (StreamReader sr = new StreamReader(openfile.FileName))
+                    {
+                        textBox2.Text = sr.ReadToEnd();
+                        sr.Close();
+                    }
                 }
+            }
+            catch (Exception)
+            {
             }
         }
 
@@ -168,7 +149,6 @@ namespace Scanner1
 
         private void redoButton_Click(object sender, EventArgs e)
         {
-            //textBox2.Redo();
         }
 
         private void selectAllButton_Click(object sender, EventArgs e)
@@ -207,11 +187,6 @@ namespace Scanner1
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            string[] Keywords = new String[] { "Yesif", "Otherwise", "Omw", "SIMww" , "Chji" , "Seriestl", "IMwf", "SIMwf" , "NOReturn" , "RepeatWhen" ,
-        "Reiterate" , "GetBack" , "OutLoop" , "Loli" , "Include" , "Start" , "Last" };
-            textBox2.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            textBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            textBox2.AutoCompleteCustomSource.AddRange(Keywords);
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -243,6 +218,35 @@ namespace Scanner1
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+
+            try
+            {
+                OpenFileDialog openfile = new OpenFileDialog();
+                openfile.Title = "My open file dialog";
+                if (openfile.ShowDialog() == DialogResult.OK)
+                {
+                    textBox2.Clear();
+                    using (StreamReader sr = new StreamReader(openfile.FileName))
+                    {
+                        GetTokens getTokens = new GetTokens(sr.ReadToEnd());
+                        richTextBox1.Text = getTokens.Compile();
+                        sr.Close();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using Scanner1.Reposiotries.interfaces;
 
-namespace Scanner1
+namespace Scanner1.Reposiotries.classes
 {
-    public class DataType : IRepositorySecondSevenDFA
+    class DataTypes : IDataTypesRepository
     {
         //Omw
-        public void matchIntegerType(string Lexeme)
+        public bool MatchIntegerType(string Lexeme)
         {
             int state = 1, i = 0;
             char character;
@@ -33,11 +32,15 @@ namespace Scanner1
                         break;
                 }
             }
-            if (state == 6) Console.WriteLine("Matched\tOmw");
+            if (state == 6) {
+                GetTokens.result += $"{GetTokens.lineNumber}\t\t\t\tOmw\t\t\tInteger\t\t\t{++GetTokens.lexemeNumber}\t\t\t\tMatched\n";
+                return true;
+            }
+            return false;
         }
 
         //SIMww
-        public void matchSignedIntegerType(string Lexeme)
+        public bool MatchSignedIntegerType(string Lexeme)
         {
             int state = 1, i = 0;
             char character;
@@ -73,11 +76,15 @@ namespace Scanner1
                         break;
                 }
             }
-            if (state == 10) Console.WriteLine("Matched\tSIMww");
+            if (state == 10) {
+                GetTokens.result += $"{GetTokens.lineNumber}\t\t\t\tSIMww\t\t\tSInteger\t\t\t{++GetTokens.lexemeNumber}\t\t\t\tMatched\n";
+                return true;
+            }
+            return false;
         }
 
         //Chji
-        public void matchCharacterType(string Lexeme)
+        public bool MatchCharacterType(string Lexeme)
         {
             int state = 1, i = 0;
             char character;
@@ -108,11 +115,15 @@ namespace Scanner1
                         break;
                 }
             }
-            if (state == 8) Console.WriteLine("Matched\tChji");
+            if (state == 8) {
+                GetTokens.result += $"{GetTokens.lineNumber}\t\t\t\tChji\t\t\tCharacter\t\t{++GetTokens.lexemeNumber}\t\t\t\tMatched\n";
+                return true;
+            }
+            return false; 
         }
 
         //Seriestl
-        public void matchStringType(string Lexeme)
+        public bool MatchStringType(string Lexeme)
         {
             int state = 1, i = 0;
             char c;
@@ -163,11 +174,15 @@ namespace Scanner1
                         break;
                 }
             }
-            if (state == 16) Console.WriteLine("Matched\tSeriestl");
+            if (state == 16) { 
+                GetTokens.result += $"{GetTokens.lineNumber}\t\t\t\tSeriestl\t\t\tString\t\t\t{++GetTokens.lexemeNumber}\t\t\t\tMatched\n";
+                return true;
+            }
+            return false;
         }
 
         //IMwf
-        public void matchFloatType(string Lexeme)
+        public bool MatchFloatType(string Lexeme)
         {
             int state = 1, i = 0;
             char character;
@@ -198,11 +213,15 @@ namespace Scanner1
                         break;
                 }
             }
-            if (state == 8) Console.WriteLine("Matched\tIMwf");
+            if (state == 8) {
+                GetTokens.result += $"{GetTokens.lineNumber}\t\t\t\tIMwf\t\t\tFloat\t\t\t{++GetTokens.lexemeNumber}\t\t\t\tMatched\n";
+                return true;
+            }
+            return false; 
         }
-
+          
         //SIMwf
-        public void matchSignedFloatType(string Lexeme)
+        public bool MatchSignedFloatType(string Lexeme)
         {
             int state = 1, i = 0;
             char character;
@@ -238,7 +257,11 @@ namespace Scanner1
                         break;
                 }
             }
-            if (state == 10) Console.WriteLine("Matched\tSIMwf");
+            if (state == 10) { 
+                GetTokens.result += $"{GetTokens.lineNumber}\t\t\t\tSIMwf\t\t\tSFloat\t\t\t{++GetTokens.lexemeNumber}\t\t\t\tMatched\n";
+                return true;    
+            }
+            return false;  
         }
     }
 }

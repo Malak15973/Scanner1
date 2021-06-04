@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FFaye\\OneDrive\\Desktop\\Practical\\Scanner1\\Scanner1.csproj": {}
+    "E:\\Scanner1\\Scanner1\\Scanner1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FFaye\\OneDrive\\Desktop\\Practical\\Scanner1\\Scanner1.csproj": {
+    "E:\\Scanner1\\Scanner1\\Scanner1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FFaye\\OneDrive\\Desktop\\Practical\\Scanner1\\Scanner1.csproj",
+        "projectUniqueName": "E:\\Scanner1\\Scanner1\\Scanner1.csproj",
         "projectName": "Scanner1",
-        "projectPath": "C:\\Users\\FFaye\\OneDrive\\Desktop\\Practical\\Scanner1\\Scanner1.csproj",
-        "packagesPath": "C:\\Users\\FFaye\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FFaye\\OneDrive\\Desktop\\Practical\\Scanner1\\obj\\",
+        "projectPath": "E:\\Scanner1\\Scanner1\\Scanner1.csproj",
+        "packagesPath": "C:\\Users\\Malak-pc\\.nuget\\packages\\",
+        "outputPath": "E:\\Scanner1\\Scanner1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\FFaye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Malak-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -61,7 +61,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
