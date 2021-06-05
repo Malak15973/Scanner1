@@ -201,10 +201,7 @@ namespace Scanner1
             
             if (textBox2.SelectedText.Length ==  0 )
             { 
-            }
-            //else if (textBox2.Text.Contains("/^") || textBox2.Text.Contains("/@") || textBox2.Text.Contains("@/"))
-            //{ 
-            //}
+            } 
             else
             {
                 
