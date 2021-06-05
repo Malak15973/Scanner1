@@ -373,10 +373,7 @@ namespace Scanner1.Reposiotries.classes
             char c;
             int length = Lexem.Length;
             string myIdent = "";
-          
-               
-              
-                    
+ 
 
                     for (int j = 0; j < length; j++)
                     {
@@ -397,12 +394,19 @@ namespace Scanner1.Reposiotries.classes
                         }
 
                         myIdent += c;
-                    }
-
-                
+                    }               
                     
 
         }
+     
+
+        public void FindDigit(string Lexem)
+        {
+            char c;
+            int length = Lexem.Length;
+            string myIdent = "";
+        }
+
 
     }
 }

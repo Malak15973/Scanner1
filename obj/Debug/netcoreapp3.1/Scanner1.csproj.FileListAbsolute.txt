@@ -27,3 +27,4 @@ E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.dll
 E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.pdb
 E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.genruntimeconfig.cache
 E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.csprojAssemblyReference.cache
+C:\Users\FFaye\OneDrive\Desktop\Practical\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.csprojAssemblyReference.cache

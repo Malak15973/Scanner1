@@ -13,6 +13,8 @@ namespace Scanner1
         public static int lexemeNumber;
         public static int i;
         public static int errors;
+        public static bool findStart;
+
         public GetTokens(string code)
         {
             this.code = code;
@@ -26,6 +28,7 @@ namespace Scanner1
             lineNumber = 1;
             lexemeNumber = 0;
             errors = 0;
+            findStart = false;
             DataTypes dataTypes = new DataTypes();
             SkipCharacters skipCharacters = new SkipCharacters();
             ReservedKeywords reservedKeywords = new ReservedKeywords();
@@ -64,8 +67,8 @@ namespace Scanner1
                     }
                     catch (Exception)
                     {
-                    }                
-                   
+                    }
+                    
                     try
                     {
                         if (skipCharacters.MatchStartComment(utilites.GetSlice(code, i, i + 2)))
@@ -93,52 +96,88 @@ namespace Scanner1
                     // Start handling datatypes
 
                     try
-                    { 
-                        if(dataTypes.MatchIntegerType(utilites.GetSlice(code, i, i + 3)))
+                    {
+                        
+                        if (dataTypes.MatchIntegerType(utilites.GetSlice(code, i, i + 3)))
                         { 
-                           i += 3;
+                            i += 3;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                          
                     }catch(Exception)
                     {
                     }
-                    try {  
-                        if(dataTypes.MatchSignedIntegerType(utilites.GetSlice(code, i, i + 5)))
+                    try {
+                       
+                        if (dataTypes.MatchSignedIntegerType(utilites.GetSlice(code, i, i + 5)))
                         {
                             i += 5;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
                     {
                     }   
-                    try {  
-                        if(dataTypes.MatchCharacterType(utilites.GetSlice(code, i, i + 4)))
+                    try {
+                        
+                        if (dataTypes.MatchCharacterType(utilites.GetSlice(code, i, i + 4)))
                         {
                             i += 4;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                      }catch (Exception)
                      {
                      }
-                    try {  
-                       if (dataTypes.MatchStringType(utilites.GetSlice(code, i, i + 8)))
-                       {
-                            i += 8;
-                       }
-                    }catch (Exception)
-                    {
-                    }
-                    try {  
-                        if (dataTypes.MatchFloatType(utilites.GetSlice(code, i, i + 4)))
+                    try {
+                       
+                        if (dataTypes.MatchStringType(utilites.GetSlice(code, i, i + 8)))
                         {
-                            i += 4;
+                            i += 8;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }catch (Exception)
                     {
                     }
-                    try {  
+                    try {
+                        
+                        if (dataTypes.MatchFloatType(utilites.GetSlice(code, i, i + 4)))
+                        {
+                            i += 4;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
+                        }
+                    }catch (Exception)
+                    {
+                    }
+                    try {
+                       
                         if (dataTypes.MatchSignedFloatType(utilites.GetSlice(code, i, i + 5)))
                         {
                             i += 5;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }catch (Exception)
                     {
@@ -154,6 +193,12 @@ namespace Scanner1
                         if (reservedKeywords.Void(utilites.GetSlice(code, i, i + 8)))
                         {
                             i += 8;
+
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -161,9 +206,15 @@ namespace Scanner1
                     }
                     try
                     {
+                       
                         if (reservedKeywords.Loop(utilites.GetSlice(code, i, i + 10)))
                         {
                             i += 10;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -171,9 +222,15 @@ namespace Scanner1
                     }
                     try
                     {
+                       
                         if (reservedKeywords.Return(utilites.GetSlice(code, i, i + 7))) 
                         {
                             i += 7;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -181,8 +238,14 @@ namespace Scanner1
                     }
                     try
                     {
+                        
                         if (reservedKeywords.Break(utilites.GetSlice(code, i, i + 7))) {
                             i += 7;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -190,9 +253,15 @@ namespace Scanner1
                     }
                     try
                     {
+                       
                         if (reservedKeywords.Struct(utilites.GetSlice(code, i, i + 4))) 
                         {
                             i += 4;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -200,9 +269,11 @@ namespace Scanner1
                     }
                     try
                     {
+                        
                         if (reservedKeywords.StartProgram(utilites.GetSlice(code, i, i + 5))) 
                         {
                             i += 5;
+                            findStart = true;
                         }
                     }
                     catch (Exception)
@@ -210,9 +281,16 @@ namespace Scanner1
                     }
                     try
                     {
+
+                       
                         if (reservedKeywords.EndProgram(utilites.GetSlice(code, i, i + 4))) 
                         {
                             i += 4;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -220,8 +298,14 @@ namespace Scanner1
                     }
                     try
                     {
+                       
                         if (reservedKeywords.MatchIf(utilites.GetSlice(code, i, i + 5))) {
                             i += 5;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -229,9 +313,15 @@ namespace Scanner1
                     }
                     try
                     {
+                       
                         if (reservedKeywords.MatchOtherwise(utilites.GetSlice(code, i, i + 9))) 
                         {
                             i += 9;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -242,6 +332,12 @@ namespace Scanner1
                         if (reservedKeywords.Include(utilites.GetSlice(code, i, i + 7))) 
                         {
                             i += 7;
+
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -254,9 +350,15 @@ namespace Scanner1
 
                     try
                     {
-                        if(skipCharacters.MatchLogicoperators(utilites.GetSlice(code, i, i + 2))) 
+                       
+                        if (skipCharacters.MatchLogicoperators(utilites.GetSlice(code, i, i + 2))) 
                         {
                             i += 2;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -264,17 +366,32 @@ namespace Scanner1
                     } 
                     try
                     {
-                        skipCharacters.MatchArithmeticOperation(utilites.GetSlice(code, i, i + 1));     
+                        
+                        bool IsArith = skipCharacters.MatchArithmeticOperation(utilites.GetSlice(code, i, i + 1));
+                        if (IsArith)
+                        {
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
+                        }
                     }
                     catch (Exception)
                     {
                     } 
                     try
                     {
+                       
                         bool IsDoler = skipCharacters.MatchTokenDelimiter(utilites.GetSlice(code, i, i + 1));
                         if (IsDoler)
                         {
                             skipCharacters.FindIdent(code[(i+1)..utilites.GetLength(code)]);
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -282,16 +399,32 @@ namespace Scanner1
                     } 
                     try
                     {
-                        skipCharacters.MatchLineDelimiter(utilites.GetSlice(code, i, i + 1));
+                        
+                        bool IsMatch = skipCharacters.MatchLineDelimiter(utilites.GetSlice(code, i, i + 1));
+                        if (IsMatch)
+                        {
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
+                        }
                     }
                     catch (Exception)
                     {
                     }   
                     try
                     {
-                        if(skipCharacters.AccessingOperator(utilites.GetSlice(code, i, i + 2)))
+
+                        
+                        if (skipCharacters.AccessingOperator(utilites.GetSlice(code, i, i + 2)))
                         {
                             i += 2;
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
                         }
                     }
                     catch (Exception)
@@ -299,21 +432,48 @@ namespace Scanner1
                     } 
                     try
                     {
-                       skipCharacters.Braces(utilites.GetSlice(code, i, i + 1));
+                       
+                        bool IsBarce = skipCharacters.Braces(utilites.GetSlice(code, i, i + 1));
+                        if (IsBarce)
+                        {
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
+                        }
                     }
                     catch (Exception)
                     {
                     } 
                     try
                     {
-                        skipCharacters.AssignmentOperator(utilites.GetSlice(code, i, i + 1));
+                       
+                        bool IsAss = skipCharacters.AssignmentOperator(utilites.GetSlice(code, i, i + 1));
+                        if (IsAss)
+                        {
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
+                        }
                     }
                     catch (Exception)
                     {
                     }
                     try
                     {
-                        skipCharacters.QuotationMark(utilites.GetSlice(code, i, i + 1));
+                       
+                        bool ISQout = skipCharacters.QuotationMark(utilites.GetSlice(code, i, i + 1));
+                        if (ISQout)
+                        {
+                            if (!findStart)
+                            {
+                                findStart = true;
+                                errors++;
+                            }
+                        }
                     }
                     catch (Exception)
                     {

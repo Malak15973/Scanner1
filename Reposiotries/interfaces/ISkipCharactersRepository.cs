@@ -16,5 +16,7 @@
 
         public bool QuotationMark(string Lexeme);
         public void FindIdent(string Lexem);
+       
+        public void FindDigit(string Lexem);
     }
 }
