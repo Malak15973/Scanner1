@@ -271,7 +271,11 @@ namespace Scanner1
                     } 
                     try
                     {
-                        skipCharacters.MatchTokenDelimiter(utilites.GetSlice(code, i, i + 1)); 
+                        bool IsDoler = skipCharacters.MatchTokenDelimiter(utilites.GetSlice(code, i, i + 1));
+                        if (IsDoler)
+                        {
+                            skipCharacters.FindIdent(code[(i+1)..utilites.GetLength(code)]);
+                        }
                     }
                     catch (Exception)
                     {
@@ -315,7 +319,9 @@ namespace Scanner1
                     {
                     }
 
-                    // End handling skip charcters                    
+                    // End handling skip charcters
+                  
+                 
                 }
             }
             

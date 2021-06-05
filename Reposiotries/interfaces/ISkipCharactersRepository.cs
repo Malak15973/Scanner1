@@ -15,6 +15,6 @@
         public bool Braces(string Lexeme);
 
         public bool QuotationMark(string Lexeme);
-       
+        public void FindIdent(string Lexem);
     }
 }

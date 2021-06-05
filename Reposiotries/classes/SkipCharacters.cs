@@ -368,7 +368,42 @@ namespace Scanner1.Reposiotries.classes
             
             return false;
         }
-        
+        public void FindIdent(string Lexem)
+        {
+            char c;
+            int length = Lexem.Length;
+            string myIdent = "";
+          
+               
+              
+                    
+
+                    for (int j = 0; j < length; j++)
+                    {
+                        c = Lexem[j];
+
+                        if (c == ',' || c == ' ' || c == '\n'|| j == length-1)
+                        {
+                            if (j == length-1)
+                            {
+                                myIdent += c;
+                            }
+                            GetTokens.result += $"{GetTokens.lineNumber}\t\t\t{myIdent}\t\t\tIdentifier\t\t\t{++GetTokens.lexemeNumber}\t\t\tMatched\n";
+                            if (c == ',')
+                            {                        
+                                FindIdent(Lexem[(j+1)..length]);
+                            }
+                            return;
+                        }
+
+                        myIdent += c;
+                    }
+
+                
+                    
+
+        }
+
     }
 }
  
