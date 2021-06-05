@@ -11,7 +11,6 @@ namespace Scanner1
         public static string result ;
         public static int lineNumber;
         public static int lexemeNumber;
-        public static int errors;
         public static int i;
         public GetTokens(string code)
         {
@@ -280,14 +279,7 @@ namespace Scanner1
                     }
                     catch (Exception)
                     {
-                    } 
-                    try
-                    {
-                        skipCharacters.AssignmentOperator(utilites.GetSlice(code, i, i + 1));
-                    }
-                    catch (Exception)
-                    {
-                    } 
+                    }   
                     try
                     {
                         if(skipCharacters.AccessingOperator(utilites.GetSlice(code, i, i + 2)))
@@ -304,8 +296,14 @@ namespace Scanner1
                     }
                     catch (Exception)
                     {
+                    } 
+                    try
+                    {
+                        skipCharacters.AssignmentOperator(utilites.GetSlice(code, i, i + 1));
                     }
-
+                    catch (Exception)
+                    {
+                    }
                     // End handling skip charcters
                 }
             }

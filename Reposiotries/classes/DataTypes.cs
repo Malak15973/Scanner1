@@ -1,5 +1,4 @@
-﻿using System;
-using Scanner1.Reposiotries.interfaces;
+﻿using Scanner1.Reposiotries.interfaces;
 
 namespace Scanner1.Reposiotries.classes
 {

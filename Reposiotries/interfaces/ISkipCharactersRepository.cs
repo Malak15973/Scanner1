@@ -13,7 +13,5 @@
         public bool AssignmentOperator(string Lexeme);
         public bool AccessingOperator(string Lexeme);
         public bool Braces(string Lexeme);
-         
-
     }
 }

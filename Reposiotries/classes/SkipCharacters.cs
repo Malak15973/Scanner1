@@ -336,5 +336,7 @@ namespace Scanner1.Reposiotries.classes
             }
             return false;
         } 
+        
+        }
     }
-}
+ 

@@ -19,7 +19,6 @@ E:\Scanner1\Scanner1\bin\Debug\netcoreapp3.1\Scanner1.runtimeconfig.json
 E:\Scanner1\Scanner1\bin\Debug\netcoreapp3.1\Scanner1.runtimeconfig.dev.json
 E:\Scanner1\Scanner1\bin\Debug\netcoreapp3.1\Scanner1.dll
 E:\Scanner1\Scanner1\bin\Debug\netcoreapp3.1\Scanner1.pdb
-E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.csprojAssemblyReference.cache
 E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.Form1.resources
 E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.csproj.GenerateResource.cache
 E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.AssemblyInfoInputs.cache
@@ -28,3 +27,4 @@ E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.csproj.CoreCompileInputs.c
 E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.dll
 E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.pdb
 E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.genruntimeconfig.cache
+E:\Scanner1\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.csprojAssemblyReference.cache
