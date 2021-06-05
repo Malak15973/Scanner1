@@ -1,29 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Text.RegularExpressions;
-using System.Collections.Specialized;
-using System.Collections;
-using Microsoft.CSharp;
-using System.CodeDom.Compiler;
-using System.Diagnostics;
-using System.Runtime.Loader;
 
 namespace Scanner1
 {
     public partial class Form1 : Form
     {
+
+        static String[] _values = { "Yesif", "Otherwise", "Omw", "SIMww", "Chji", "Seriestl",
+            "IMwf", "SIMwf", "NOReturn", "RepeatWhen", "Reiterate", "GetBack",
+            "OutLoop", "Loli", "Include", "Start", "Last"};
+        AutoComplete autoComplete; 
+
         public Form1()
         {
             InitializeComponent();
-            
+            AutoComplete.Values = _values;
         }
       
         public int line = 0;
@@ -33,15 +25,23 @@ namespace Scanner1
         private void button1_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
-            GetTokens getTokens = new GetTokens(textBox2.Text);
+            GetTokens getTokens = new GetTokens(autoComplete.Text);
             richTextBox1.Text = getTokens.Compile();
         }
         
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            autoComplete = new AutoComplete(); 
+            autoComplete.Width = 794;
+            autoComplete.Multiline = true;
+            autoComplete.Height = 164;
+            autoComplete.Top = 50; 
+            autoComplete.ScrollBars = ScrollBars.Vertical;
+            Controls.Add(autoComplete);
+
         }
- 
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -50,12 +50,12 @@ namespace Scanner1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            textBox2.Cut();
+            autoComplete.Cut();
         }
 
         private void newToolStripButton_Click(object sender, EventArgs e)
         {
-            textBox2.Clear();
+            autoComplete.Clear();
         }
 
         private static int CountLines(string str)
@@ -75,21 +75,21 @@ namespace Scanner1
         private void button3_Click(object sender, EventArgs e)
         {
            
-            if(textBox2.SelectedText.Length == 0)
+            if(autoComplete.SelectedText.Length == 0)
             {
 
             }
             else
             {
-                string show = textBox2.SelectedText;
+                string show = autoComplete.SelectedText;
                 string temp = show;
                 int Number_in_section = CountLines(show);
                 string str = temp.Remove(0, 2);
                 if (Number_in_section == 1 && show.StartsWith("/^"))
-                    textBox2.Text = textBox2.Text.Replace(show, show.Remove(0, 2));
+                    autoComplete.Text = autoComplete.Text.Replace(show, show.Remove(0, 2));
                 else if (Number_in_section != 1 && (show.StartsWith("/@") && show.EndsWith("@/")))
                 {
-                    textBox2.Text = textBox2.Text.Replace(show, str.Remove(str.Length - 2, 2));
+                    autoComplete.Text = autoComplete.Text.Replace(show, str.Remove(str.Length - 2, 2));
 
                 }
 
@@ -107,10 +107,10 @@ namespace Scanner1
                 openfile.Title = "My open file dialog";
                 if (openfile.ShowDialog() == DialogResult.OK)
                 {
-                    textBox2.Clear();
+                    autoComplete.Clear();
                     using (StreamReader sr = new StreamReader(openfile.FileName))
                     {
-                        textBox2.Text = sr.ReadToEnd();
+                        autoComplete.Text = sr.ReadToEnd();
                         sr.Close();
                     }
                 }
@@ -127,24 +127,24 @@ namespace Scanner1
             if (savefile.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter txtoutput = new StreamWriter(savefile.FileName);
-                txtoutput.Write(textBox2.Text);
+                txtoutput.Write(autoComplete.Text);
                 txtoutput.Close();
             }
         }
 
         private void copyToolStripButton_Click(object sender, EventArgs e)
         {
-            textBox2.Copy();
+            autoComplete.Copy();
         }
 
         private void pasteToolStripButton_Click(object sender, EventArgs e)
         {
-            textBox2.Paste();
+            autoComplete.Paste();
         }
 
         private void undoButton_Click(object sender, EventArgs e)
         {
-            textBox2.Undo();
+            autoComplete.Undo();
         }
 
         private void redoButton_Click(object sender, EventArgs e)
@@ -153,7 +153,7 @@ namespace Scanner1
 
         private void selectAllButton_Click(object sender, EventArgs e)
         {
-            textBox2.SelectAll();
+            autoComplete.SelectAll();
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -163,8 +163,8 @@ namespace Scanner1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            line = 1 + textBox2.GetLineFromCharIndex(textBox2.GetFirstCharIndexOfCurrentLine());
-            column = 1 + textBox2.SelectionStart - textBox2.GetFirstCharIndexOfCurrentLine();
+            line = 1 + autoComplete.GetLineFromCharIndex(autoComplete.GetFirstCharIndexOfCurrentLine());
+            column = 1 + autoComplete.SelectionStart - autoComplete.GetFirstCharIndexOfCurrentLine();
             toolStripStatusLabel1.Text = "line: " + line.ToString() + " | column: " + column.ToString();
         }
 
@@ -179,7 +179,7 @@ namespace Scanner1
         {
             if (textBox3.Text != null && !string.IsNullOrWhiteSpace(textBox3.Text) && textBox4.Text != null && !string.IsNullOrWhiteSpace(textBox4.Text))
             {
-                textBox2.Text = textBox2.Text.Replace(textBox3.Text, textBox4.Text);
+                autoComplete.Text = autoComplete.Text.Replace(textBox3.Text, textBox4.Text);
                 textBox3.Text = "";
                 textBox4.Text = "";
             }
@@ -196,10 +196,10 @@ namespace Scanner1
 
         private void Comment_Click(object sender, EventArgs e)
         {
-            string show = textBox2.SelectedText;
+            string show = autoComplete.SelectedText;
             
             
-            if (textBox2.SelectedText.Length ==  0 )
+            if (autoComplete.SelectedText.Length ==  0 )
             { 
             } 
             else
@@ -216,12 +216,12 @@ namespace Scanner1
 
                     }
                     else
-                        textBox2.Text = textBox2.Text.Replace(show, ("/^" + show));
+                        autoComplete.Text = autoComplete.Text.Replace(show, ("/^" + show));
                 }
 
                 else
                 {
-                    textBox2.Text = textBox2.Text.Replace(show, ("/@" + show + "@/"));
+                    autoComplete.Text = autoComplete.Text.Replace(show, ("/@" + show + "@/"));
                     
                 }
                     
@@ -249,7 +249,7 @@ namespace Scanner1
                 openfile.Title = "My open file dialog";
                 if (openfile.ShowDialog() == DialogResult.OK)
                 {
-                    textBox2.Clear();
+                    autoComplete.Clear();
                     using (StreamReader sr = new StreamReader(openfile.FileName))
                     {
                         GetTokens getTokens = new GetTokens(sr.ReadToEnd());

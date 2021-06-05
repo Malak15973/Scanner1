@@ -304,6 +304,14 @@ namespace Scanner1
                     catch (Exception)
                     {
                     }
+                    try
+                    {
+                        skipCharacters.QuotationMark(utilites.GetSlice(code, i, i + 1));
+                    }
+                    catch (Exception)
+                    {
+                    }
+
                     // End handling skip charcters
                 }
             }

@@ -335,8 +335,39 @@ namespace Scanner1.Reposiotries.classes
                 return true;
             }
             return false;
-        } 
-        
         }
+
+        public bool QuotationMark(string Lexeme)
+        {
+            int state = 1, i = 0;
+            char c;
+            while ((state != 2 && state != 4  ) && state != 0)
+            {
+                c = Lexeme[i];
+                switch (state)
+                {
+                    case 1:
+                        if (c == '"') state = 2;
+                        else if (c == '\'') state = 4; 
+                        else state = 0;
+                        i++;
+                        break;
+                }
+
+            }
+            if (state == 2)
+            {
+                GetTokens.result += $"{GetTokens.lineNumber}\t\t\t\"\t\t\tQuotation Mark\t\t\t{++GetTokens.lexemeNumber}\t\t\tMatched\n";
+                return true;
+            }
+            else if (state == 4)
+            {
+                GetTokens.result += $"{GetTokens.lineNumber}\t\t\t'\t\t\tQuotation Mark\t\t\t{++GetTokens.lexemeNumber}\t\t\tMatched\n";
+                return true;
+            }
+            
+            return false;
+        }
+    }
     }
  
