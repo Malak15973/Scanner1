@@ -197,20 +197,37 @@ namespace Scanner1
         private void Comment_Click(object sender, EventArgs e)
         {
             string show = textBox2.SelectedText;
+            
+            
             if (textBox2.SelectedText.Length ==  0 )
             { 
             }
-            else if (textBox2.Text.Contains("/^") || textBox2.Text.Contains("/@") || textBox2.Text.Contains("@/"))
-            { 
-            }
+            //else if (textBox2.Text.Contains("/^") || textBox2.Text.Contains("/@") || textBox2.Text.Contains("@/"))
+            //{ 
+            //}
             else
             {
                 
                 int Number_in_section = CountLines(show);
                 if (Number_in_section == 1)
-                    textBox2.Text = textBox2.Text.Replace(show, ("/^" + show));
+                {
+                    if (show.StartsWith("/@") )
+                    {
+
+                    }else if (show.EndsWith("@/"))
+                    {
+
+                    }
+                    else
+                        textBox2.Text = textBox2.Text.Replace(show, ("/^" + show));
+                }
+
                 else
+                {
                     textBox2.Text = textBox2.Text.Replace(show, ("/@" + show + "@/"));
+                    
+                }
+                    
             }
 
         }

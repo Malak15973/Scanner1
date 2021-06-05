@@ -65,10 +65,9 @@ namespace Scanner1
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(603, 219);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(689, 292);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 22);
+            this.button1.Size = new System.Drawing.Size(94, 29);
             this.button1.TabIndex = 2;
             this.button1.Text = "Compile";
             this.button1.UseVisualStyleBackColor = true;
@@ -77,10 +76,9 @@ namespace Scanner1
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(702, 219);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(802, 292);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 22);
+            this.button2.Size = new System.Drawing.Size(94, 29);
             this.button2.TabIndex = 3;
             this.button2.Text = "Browse";
             this.button2.UseVisualStyleBackColor = true;
@@ -124,9 +122,8 @@ namespace Scanner1
             // newToolStripButton
             // 
             this.newToolStripButton.Location = new System.Drawing.Point(0, 0);
-            this.newToolStripButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(49, 22);
+            this.newToolStripButton.Size = new System.Drawing.Size(56, 29);
             this.newToolStripButton.TabIndex = 4;
             this.newToolStripButton.Text = "Clear";
             this.newToolStripButton.UseVisualStyleBackColor = true;
@@ -134,10 +131,9 @@ namespace Scanner1
             // 
             // pasteToolStripButton
             // 
-            this.pasteToolStripButton.Location = new System.Drawing.Point(249, 0);
-            this.pasteToolStripButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pasteToolStripButton.Location = new System.Drawing.Point(285, 0);
             this.pasteToolStripButton.Name = "pasteToolStripButton";
-            this.pasteToolStripButton.Size = new System.Drawing.Size(47, 22);
+            this.pasteToolStripButton.Size = new System.Drawing.Size(54, 29);
             this.pasteToolStripButton.TabIndex = 5;
             this.pasteToolStripButton.Text = "Paste";
             this.pasteToolStripButton.UseVisualStyleBackColor = true;
@@ -145,10 +141,9 @@ namespace Scanner1
             // 
             // copyToolStripButton
             // 
-            this.copyToolStripButton.Location = new System.Drawing.Point(198, 0);
-            this.copyToolStripButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.copyToolStripButton.Location = new System.Drawing.Point(226, 0);
             this.copyToolStripButton.Name = "copyToolStripButton";
-            this.copyToolStripButton.Size = new System.Drawing.Size(46, 22);
+            this.copyToolStripButton.Size = new System.Drawing.Size(53, 29);
             this.copyToolStripButton.TabIndex = 6;
             this.copyToolStripButton.Text = "Copy";
             this.copyToolStripButton.UseVisualStyleBackColor = true;
@@ -156,10 +151,9 @@ namespace Scanner1
             // 
             // cutToolStripButton
             // 
-            this.cutToolStripButton.Location = new System.Drawing.Point(155, 0);
-            this.cutToolStripButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cutToolStripButton.Location = new System.Drawing.Point(177, 0);
             this.cutToolStripButton.Name = "cutToolStripButton";
-            this.cutToolStripButton.Size = new System.Drawing.Size(38, 22);
+            this.cutToolStripButton.Size = new System.Drawing.Size(43, 29);
             this.cutToolStripButton.TabIndex = 7;
             this.cutToolStripButton.Text = "Cut";
             this.cutToolStripButton.UseVisualStyleBackColor = true;
@@ -167,10 +161,9 @@ namespace Scanner1
             // 
             // saveToolStripButton
             // 
-            this.saveToolStripButton.Location = new System.Drawing.Point(108, 0);
-            this.saveToolStripButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.saveToolStripButton.Location = new System.Drawing.Point(123, 0);
             this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(42, 22);
+            this.saveToolStripButton.Size = new System.Drawing.Size(48, 29);
             this.saveToolStripButton.TabIndex = 8;
             this.saveToolStripButton.Text = "Save";
             this.saveToolStripButton.UseVisualStyleBackColor = true;
@@ -178,10 +171,9 @@ namespace Scanner1
             // 
             // openToolStripButton
             // 
-            this.openToolStripButton.Location = new System.Drawing.Point(54, 0);
-            this.openToolStripButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.openToolStripButton.Location = new System.Drawing.Point(62, 0);
             this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(48, 22);
+            this.openToolStripButton.Size = new System.Drawing.Size(55, 29);
             this.openToolStripButton.TabIndex = 9;
             this.openToolStripButton.Text = "Open";
             this.openToolStripButton.UseVisualStyleBackColor = true;
@@ -189,10 +181,9 @@ namespace Scanner1
             // 
             // undoButton
             // 
-            this.undoButton.Location = new System.Drawing.Point(302, 0);
-            this.undoButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.undoButton.Location = new System.Drawing.Point(345, 0);
             this.undoButton.Name = "undoButton";
-            this.undoButton.Size = new System.Drawing.Size(48, 22);
+            this.undoButton.Size = new System.Drawing.Size(55, 29);
             this.undoButton.TabIndex = 10;
             this.undoButton.Text = "Undo";
             this.undoButton.UseVisualStyleBackColor = true;
@@ -200,10 +191,9 @@ namespace Scanner1
             // 
             // selectAllButton
             // 
-            this.selectAllButton.Location = new System.Drawing.Point(355, 0);
-            this.selectAllButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.selectAllButton.Location = new System.Drawing.Point(406, 0);
             this.selectAllButton.Name = "selectAllButton";
-            this.selectAllButton.Size = new System.Drawing.Size(78, 22);
+            this.selectAllButton.Size = new System.Drawing.Size(89, 29);
             this.selectAllButton.TabIndex = 12;
             this.selectAllButton.Text = "Select All";
             this.selectAllButton.UseVisualStyleBackColor = true;
@@ -211,10 +201,9 @@ namespace Scanner1
             // 
             // Comment
             // 
-            this.Comment.Location = new System.Drawing.Point(438, 1);
-            this.Comment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Comment.Location = new System.Drawing.Point(501, 1);
             this.Comment.Name = "Comment";
-            this.Comment.Size = new System.Drawing.Size(77, 22);
+            this.Comment.Size = new System.Drawing.Size(88, 29);
             this.Comment.TabIndex = 13;
             this.Comment.Text = "Comment";
             this.Comment.UseVisualStyleBackColor = true;
@@ -222,10 +211,9 @@ namespace Scanner1
             // 
             // NotComment
             // 
-            this.NotComment.Location = new System.Drawing.Point(521, 0);
-            this.NotComment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NotComment.Location = new System.Drawing.Point(595, 0);
             this.NotComment.Name = "NotComment";
-            this.NotComment.Size = new System.Drawing.Size(106, 22);
+            this.NotComment.Size = new System.Drawing.Size(121, 29);
             this.NotComment.TabIndex = 14;
             this.NotComment.Text = "uncomment";
             this.NotComment.UseVisualStyleBackColor = true;
@@ -234,10 +222,9 @@ namespace Scanner1
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.Location = new System.Drawing.Point(747, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Location = new System.Drawing.Point(854, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(46, 22);
+            this.btnExit.Size = new System.Drawing.Size(53, 29);
             this.btnExit.TabIndex = 15;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -250,17 +237,16 @@ namespace Scanner1
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 217);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 292);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(102, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(124, 26);
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(87, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(107, 20);
             this.toolStripStatusLabel1.Text = "lineandcolumn";
             // 
             // timer1
@@ -271,45 +257,42 @@ namespace Scanner1
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(54, 27);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox3.Location = new System.Drawing.Point(62, 36);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(110, 23);
+            this.textBox3.Size = new System.Drawing.Size(125, 27);
             this.textBox3.TabIndex = 20;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 29);
+            this.label2.Location = new System.Drawing.Point(3, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 15);
+            this.label2.Size = new System.Drawing.Size(37, 20);
             this.label2.TabIndex = 19;
             this.label2.Text = "Find";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(230, 27);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox4.Location = new System.Drawing.Point(263, 36);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(110, 23);
+            this.textBox4.Size = new System.Drawing.Size(125, 27);
             this.textBox4.TabIndex = 22;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(178, 29);
+            this.label3.Location = new System.Drawing.Point(203, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 15);
+            this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 21;
             this.label3.Text = "Replace";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(370, 27);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Location = new System.Drawing.Point(423, 36);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 22);
+            this.button3.Size = new System.Drawing.Size(165, 29);
             this.button3.TabIndex = 23;
             this.button3.Text = "Run Replacement";
             this.button3.UseVisualStyleBackColor = true;
@@ -346,30 +329,30 @@ namespace Scanner1
             this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.textBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(0, 53);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Location = new System.Drawing.Point(0, 71);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(794, 164);
+            this.textBox2.Size = new System.Drawing.Size(907, 217);
             this.textBox2.TabIndex = 24;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(3, 242);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 323);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(791, 96);
+            this.richTextBox1.Size = new System.Drawing.Size(903, 127);
             this.richTextBox1.TabIndex = 25;
             this.richTextBox1.Text = "";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 338);
+            this.ClientSize = new System.Drawing.Size(919, 451);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button3);
@@ -391,7 +374,6 @@ namespace Scanner1
             this.Controls.Add(this.newToolStripButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Compiler";
             this.Load += new System.EventHandler(this.Form1_Load);
