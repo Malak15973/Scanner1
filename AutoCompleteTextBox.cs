@@ -38,7 +38,7 @@ namespace Scanner1
             Point positionOnForm = parentForm.PointToClient(Parent.PointToScreen(Location));
             _listBox.Left = positionOnForm.X;
             int currentline = this.GetLineFromCharIndex(this.SelectionStart);
-            _listBox.Top = 70 + currentline * 20;
+            _listBox.Top = 100 + currentline * 20;
 
 
             _listBox.Visible = true;

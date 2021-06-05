@@ -27,16 +27,17 @@ namespace Scanner1
             richTextBox1.Clear();
             GetTokens getTokens = new GetTokens(autoComplete.Text);
             richTextBox1.Text = getTokens.Compile();
+            label4.Text = GetTokens.errors.ToString();
         }
         
 
         private void Form1_Load(object sender, EventArgs e)
         {
             autoComplete = new AutoComplete(); 
-            autoComplete.Width = 794;
+            autoComplete.Width = 950;
             autoComplete.Multiline = true;
-            autoComplete.Height = 164;
-            autoComplete.Top = 50; 
+            autoComplete.Height = 200;
+            autoComplete.Top = 70; 
             autoComplete.ScrollBars = ScrollBars.Vertical;
             Controls.Add(autoComplete);
 
@@ -261,6 +262,16 @@ namespace Scanner1
             catch (Exception)
             {
             }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

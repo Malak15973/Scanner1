@@ -4,7 +4,6 @@ C:\Users\FFaye\OneDrive\Desktop\Practical\Scanner1\bin\Debug\netcoreapp3.1\Scann
 C:\Users\FFaye\OneDrive\Desktop\Practical\Scanner1\bin\Debug\netcoreapp3.1\Scanner1.runtimeconfig.dev.json
 C:\Users\FFaye\OneDrive\Desktop\Practical\Scanner1\bin\Debug\netcoreapp3.1\Scanner1.dll
 C:\Users\FFaye\OneDrive\Desktop\Practical\Scanner1\bin\Debug\netcoreapp3.1\Scanner1.pdb
-C:\Users\FFaye\OneDrive\Desktop\Practical\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.csprojAssemblyReference.cache
 C:\Users\FFaye\OneDrive\Desktop\Practical\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.Form1.resources
 C:\Users\FFaye\OneDrive\Desktop\Practical\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.csproj.GenerateResource.cache
 C:\Users\FFaye\OneDrive\Desktop\Practical\Scanner1\obj\Debug\netcoreapp3.1\Scanner1.AssemblyInfoInputs.cache

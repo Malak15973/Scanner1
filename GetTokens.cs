@@ -12,6 +12,7 @@ namespace Scanner1
         public static int lineNumber;
         public static int lexemeNumber;
         public static int i;
+        public static int errors;
         public GetTokens(string code)
         {
             this.code = code;
@@ -24,6 +25,7 @@ namespace Scanner1
             result = "lineNumber\t\t\tlexeme\t\t\tToken\t\t\tlexemeNoInLine\t\t\tmatchability\n";
             lineNumber = 1;
             lexemeNumber = 0;
+            errors = 0;
             DataTypes dataTypes = new DataTypes();
             SkipCharacters skipCharacters = new SkipCharacters();
             ReservedKeywords reservedKeywords = new ReservedKeywords();
@@ -62,7 +64,8 @@ namespace Scanner1
                     }
                     catch (Exception)
                     {
-                    }       
+                    }                
+                   
                     try
                     {
                         if (skipCharacters.MatchStartComment(utilites.GetSlice(code, i, i + 2)))
@@ -312,7 +315,7 @@ namespace Scanner1
                     {
                     }
 
-                    // End handling skip charcters
+                    // End handling skip charcters                    
                 }
             }
             
